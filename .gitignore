@@ -1,0 +1,8 @@
+Config/Gemini.local.xcconfig
+.DS_Store
+Config/RevenueCat.local.xcconfig
+
+backend/.env
+backend/__pycache__/
+Config/Backend.local.xcconfig
+Config/Backend.release.local.xcconfig

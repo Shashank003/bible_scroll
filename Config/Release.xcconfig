@@ -1,0 +1,3 @@
+#include "RevenueCat.xcconfig"
+#include? "Backend.release.local.xcconfig"
+INFOPLIST_FILE = $(SRCROOT)/Config/Release-Info.plist

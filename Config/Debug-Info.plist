@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AIBackendDemoToken</key>
+	<string>$(AI_BACKEND_DEMO_TOKEN)</string>
+	<key>AIBackendURL</key>
+	<string>$(AI_BACKEND_URL)</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsLocalNetworking</key>
+		<true/>
+	</dict>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>Connect to your local development server for verse explanations.</string>
+	<key>PaywallPrivacyURL</key>
+	<string>$(PAYWALL_PRIVACY_URL)</string>
+	<key>PaywallTermsURL</key>
+	<string>$(PAYWALL_TERMS_URL)</string>
+	<key>RevenueCatEntitlementID</key>
+	<string>$(REVENUECAT_ENTITLEMENT_ID)</string>
+	<key>RevenueCatOfferingID</key>
+	<string>$(REVENUECAT_OFFERING_ID)</string>
+	<key>RevenueCatPublicAPIKey</key>
+	<string>$(REVENUECAT_PUBLIC_API_KEY)</string>
+	<key>RevenueCatSecondOfferingID</key>
+	<string>$(REVENUECAT_SECOND_OFFERING_ID)</string>
+	<key>RevenueCatSecondPackageID</key>
+	<string>$(REVENUECAT_SECOND_PACKAGE_ID)</string>
+</dict>
+</plist>

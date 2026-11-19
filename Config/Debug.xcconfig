@@ -1,0 +1,4 @@
+#include "RevenueCat.xcconfig"
+AI_BACKEND_URL = http:/$()/localhost:8787
+#include? "Backend.local.xcconfig"
+INFOPLIST_FILE = $(SRCROOT)/Config/Debug-Info.plist

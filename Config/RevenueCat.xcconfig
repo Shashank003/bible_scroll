@@ -1,0 +1,7 @@
+REVENUECAT_ENTITLEMENT_ID = premium
+// Leave first offering empty to use RevenueCat's current/default offering.
+REVENUECAT_OFFERING_ID =
+REVENUECAT_SECOND_OFFERING_ID =
+REVENUECAT_SECOND_PACKAGE_ID =
+REVENUECAT_PUBLIC_API_KEY =
+#include? "RevenueCat.local.xcconfig"
