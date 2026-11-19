@@ -1,24 +1,30 @@
-# Legal review — 20 November 2026
+# Internal legal and implementation follow-up
 
-Local drafts are available at `/apps/stillword/terms/` and `/apps/stillword/privacy/`. They are original text based on this app's implementation; competitor documents were used to identify coverage areas, not copied.
+Updated 20 November 2026. This file is an internal checklist, not website copy.
 
-## Sources reviewed
+## Confirmed owner details
 
-- Competitor's native-app terms: https://thejcbsnbrand.com/apps/scroll-the-bible/terms
-- Competitor's native-app privacy policy: https://thejcbsnbrand.com/apps/scroll-the-bible/privacy
-- Apple Standard EULA: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
-- RevenueCat privacy: https://www.revenuecat.com/privacy/
-- Gemini API terms: https://ai.google.dev/gemini-api/terms
+Code Rustlers is an Indian sole proprietorship. App: Stillword. Public domain: code-rustlers.com. Support/privacy contact: ginni003@gmail.com. Audience: international, subject to applicable restrictions. AI: Google Gemini. Backend platform: Railway.
 
-Competitor-specific integrations (Superwall, OpenAI, Supabase, Meta, AppsFlyer, online translation providers, Android billing) were not imported into our documents.
+## Remaining details and implementation
 
-## Required owner decisions before public release
+- Proprietor’s full legal name, postal business address, and state have not been supplied. Obtain these for any applicable business disclosures; do not invent them.
+- Confirm Gemini billing tier. Current provider terms impose age and region restrictions, including paid-service requirements for EEA/UK/Switzerland. An adult-use clause does not implement age assurance or consent.
+- Deploy and secure backend authentication, entitlement verification, HTTPS, rate limits, log redaction/retention, and hosting regions. The current Python demo still refuses production mode. Naming Railway in the policy does not deploy anything there.
+- No dedicated analytics or advertising SDK has been added. The privacy policy covers optional measurement conditionally. Identify actual providers and data events before enabling them, and implement required consent and tracking choices. Do not treat a general policy as user consent.
+- Confirm real subscription prices and discounted renewal terms from checkout. Do not hardcode unsupported savings or introductory offers in the legal pages.
+- Confirm amount, beneficiary, timing, and accounting for the paywall’s giving claim. No donation specifics or charitable status have been invented in the terms.
+- The website loads Google Fonts and discloses it. No optional website analytics cookies are installed.
+- The legal pages use public wording but have not received legal review for global distribution. Applicable Indian and international requirements may require additional disclosures or controls.
+- The app still uses existing snaprise.io legal URLs. Switch to the code-rustlers.com URLs only once these pages are publicly deployed and verified.
 
-- Legal operator name, address, country/jurisdiction, verified public support/privacy email, and final product name.
-- Confirm production Gemini billing tier, permitted audience (current Gemini terms restrict API clients accessed by under-18 users), regions, necessary consent, and provider retention. A policy alone does not implement age controls or consent.
-- Choose production hosting, authenticated backend access, subscription verification, security controls, logging, retention, and data-transfer arrangements. Current demo backend refuses production mode.
-- Confirm subscription terms and all promotional/giving claims against actual practices. No donation amount, beneficiary, nonprofit status, or tax-deductibility promise has been invented in these documents.
-- Decide whether to self-host Google Fonts; current website requests them externally.
-- Review with qualified counsel for target markets. Local draft status and unfinished fields should not be removed until these matters are resolved.
+## Sources
 
-The iOS paywall's existing snaprise.io URLs remain unchanged; localhost cannot serve as a public App Store legal URL. Change those only after approved documents have a public address.
+- https://thejcbsnbrand.com/apps/scroll-the-bible/terms
+- https://thejcbsnbrand.com/apps/scroll-the-bible/privacy
+- https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+- https://www.revenuecat.com/privacy/
+- https://ai.google.dev/gemini-api/terms
+- https://railway.com/legal/privacy
+
+The competitor documents informed coverage areas; the text is original and tailored to Stillword.

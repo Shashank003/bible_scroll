@@ -14,6 +14,15 @@ From this folder, run `python3 -m http.server 8000`, then visit http://localhost
 - `apps/stillword/index.html`: app resource hub and FAQs.
 - `assets/`: the studio mark and copied app artwork.
 
-Stillword is the working app name; update it before launch if needed. Legal documents are deliberately not published yet. Add approved terms and privacy documents under `apps/stillword/terms/` and `apps/stillword/privacy/`, then replace the hub's status cards with links. Add a verified support contact. Do not point App Store legal URLs to unpublished documents.
+## Public pages
+
+- `/`: Code Rustlers studio.
+- `/apps/stillword/`: Stillword resources, support email, and Apple refund help.
+- `/apps/stillword/terms/`: terms of service.
+- `/apps/stillword/privacy/`: privacy policy.
+
+Brand: Code Rustlers, sole proprietorship, India. Product: Stillword. Domain: code-rustlers.com. Contact: ginni003@gmail.com. No store download buttons are included.
+
+The documents have public-facing wording. Internal implementation and owner follow-ups are in LEGAL-REVIEW.md. Policy wording does not implement analytics consent, age restrictions, or production security. App legal URLs should be updated after this website is publicly deployed.
 
 Upload only this folder to any static host (for example GitHub Pages or Cloudflare Pages). Set this directory as the publish directory; no build command is required. Google Fonts is optional; system and Georgia fallbacks work without it. No site has been deployed automatically.
