@@ -14,6 +14,16 @@ From this folder, run `python3 -m http.server 8000`, then visit http://localhost
 - `apps/stillword/index.html`: app resource hub and FAQs.
 - `assets/`: the studio mark and copied app artwork.
 
+## Railway
+
+Set the landing-page service Root Directory to `/code_rustlers_landing_page`.
+Clear custom Build and Start commands, including any earlier `cd` / Python command.
+Railway detects the Dockerfile and runs nginx with the assigned PORT automatically.
+Commit and push these files, then redeploy. Generate a public domain under Networking
+and connect code-rustlers.com there. Keep the AI backend in a separate service.
+Only public website files are copied into the image; internal Markdown checklists
+and the rest of the iOS repository are excluded.
+
 ## Public pages
 
 - `/`: Code Rustlers studio.
