@@ -2,9 +2,8 @@
 
 ## Railway hosted demo
 
-Create a separate backend service connected to this repository. Keep Root Directory
-at `/` because the server requires `BibleScroll/kjv.json` and `BibleScroll/web.json`.
-Set service variable `RAILWAY_DOCKERFILE_PATH=backend/Dockerfile`. Leave custom
+Create a separate backend service connected to this repository. Set Root Directory to `/backend`. Bible data is bundled in `backend/data/`.
+Remove any old `RAILWAY_DOCKERFILE_PATH` variable, or set it to `Dockerfile`. Leave custom
 build/start commands empty. Add `APP_ENV=development`, `HOST=0.0.0.0`,
 `GEMINI_API_KEY`, `GEMINI_MODEL`, and `DEMO_API_TOKEN` from your private local
 configuration using Railway Variables. Railway supplies PORT. Never commit `.env`.
@@ -17,7 +16,7 @@ authentication, limits are process-local, and the server refuses APP_ENV=product
 Do not change that guard until production authentication and entitlement verification
 are implemented. The Docker image copies only the server and Bible files, not secrets.
 
-Local development server using Python 3, with no package dependencies. AI responses are freshly generated, never cached or written to disk. The app sends a verse ID and translation; the server loads the passage and context from the bundled Bible files. Notes and bookmarks stay on the phone.
+Local development server using Python 3, with no package dependencies. AI responses are freshly generated, never cached or written to disk. The app sends a verse ID and translation; the server loads the passage and context from the bundled Bible files in `backend/data/`. Notes and bookmarks stay on the phone.
 
 ## Run locally
 
@@ -52,3 +51,5 @@ The first grants app access only in DEBUG builds, without modifying RevenueCat e
 ## Before deploying
 
 This server intentionally refuses non-development mode. The shared demo token is bundled in debug builds and is not production authentication. Add authenticated user sessions, verify that user's RevenueCat entitlement server-side, enforce per-user quotas, and deploy behind HTTPS with request timeouts/body limits. Store server secrets in the host's secret manager. Then replace debug-token authentication in the iOS client with short-lived user credentials and set `AI_BACKEND_URL` in `Config/Backend.release.local.xcconfig`. Release builds have no Gemini key or demo token. No cloud sync is required for reading progress.
+
+When updating bundled Bible text, copy the matching iOS JSON files into `backend/data/` as well. These are server copies of the same public Bible datasets.

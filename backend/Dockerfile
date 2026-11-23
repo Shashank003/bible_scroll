@@ -1,4 +1,4 @@
-# Build context: repository root, not backend/.
+# Railway Root Directory: /backend
 FROM python:3.12-slim
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
@@ -6,8 +6,8 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     HOST=0.0.0.0
 
 WORKDIR /app
-COPY backend/server.py /app/backend/server.py
-COPY BibleScroll/kjv.json BibleScroll/web.json /app/BibleScroll/
+COPY server.py /app/server.py
+COPY data/ /app/data/
 
 USER nobody
-CMD ["python", "backend/server.py"]
+CMD ["python", "server.py"]

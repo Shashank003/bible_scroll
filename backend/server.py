@@ -26,7 +26,7 @@ if not KEY or len(TOKEN) < 32 or not re.fullmatch(r'[A-Za-z0-9._-]+', MODEL):
 # Bible data is authoritative; clients send references, never arbitrary prompts.
 BIBLES = {}
 for translation in ('KJV', 'WEB'):
-    books = json.loads((ROOT.parent / 'BibleScroll' / f'{translation.lower()}.json').read_text())
+    books = json.loads((ROOT / 'data' / f'{translation.lower()}.json').read_text())
     BIBLES[translation] = {
         f"{book['id']}.{chapter_number}.{verse_number}":
         (f"{book['name']} {chapter_number}:{verse_number}", text, chapter)
