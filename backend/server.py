@@ -1,4 +1,4 @@
-"""Local demo API. Python standard library only; deliberately refuses production mode."""
+"""Verse analysis API using a shared app token, without user or subscription checks."""
 import hmac
 import json
 import os
@@ -15,8 +15,9 @@ for line in (ROOT / '.env').read_text().splitlines() if (ROOT / '.env').exists()
         key, value = line.split('=', 1)
         os.environ.setdefault(key.strip(), value.strip())
 
-if os.environ.get('APP_ENV', 'development') != 'development':
-    raise SystemExit('Production requires authenticated user sessions and server-side entitlement verification.')
+APP_ENV = os.environ.get('APP_ENV', 'development')
+if APP_ENV not in ('development', 'production'):
+    raise SystemExit('APP_ENV must be development or production.')
 KEY = os.environ.get('GEMINI_API_KEY', '')
 TOKEN = os.environ.get('DEMO_API_TOKEN', '')
 MODEL = os.environ.get('GEMINI_MODEL', 'gemini-3.5-flash-lite')
@@ -96,7 +97,7 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_GET(self):
         self.respond(200 if self.path == '/health' else 404,
-                     {'status': 'ok', 'mode': 'local-demo'} if self.path == '/health' else {'error': 'not_found'})
+                     {'status': 'ok', 'mode': APP_ENV} if self.path == '/health' else {'error': 'not_found'})
 
     def do_POST(self):
         if self.path != '/v1/analysis':
@@ -132,5 +133,5 @@ class Handler(BaseHTTPRequestHandler):
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', '8787'))
     host = os.environ.get('HOST', '127.0.0.1')
-    print(f'Local demo backend listening on {host}:{port}', flush=True)
+    print(f'Verse analysis backend ({APP_ENV}) listening on {host}:{port}', flush=True)
     ThreadingHTTPServer((host, port), Handler).serve_forever()

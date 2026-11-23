@@ -40,11 +40,9 @@ actor GeminiAnalysisService {
         request.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("no-store", forHTTPHeaderField: "Cache-Control")
-        #if DEBUG
         let token = Bundle.main.object(forInfoDictionaryKey: "AIBackendDemoToken") as? String ?? ""
         guard !token.isEmpty, !token.contains("$(") else { throw Failure.unavailable }
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        #endif
         request.httpBody = try JSONSerialization.data(withJSONObject: ["verseID": verse.id, "translation": translation])
         let (data, response) = try await session.data(for: request)
         try Task.checkCancellation()
