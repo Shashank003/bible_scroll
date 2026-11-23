@@ -1,3 +1,4 @@
 #include "RevenueCat.xcconfig"
+AI_BACKEND_URL = https:/$()/biblescrollbackend-production.up.railway.app
 #include? "Backend.release.local.xcconfig"
 INFOPLIST_FILE = $(SRCROOT)/Config/Release-Info.plist

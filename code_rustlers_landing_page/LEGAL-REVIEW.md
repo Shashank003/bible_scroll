@@ -4,7 +4,7 @@ Updated 20 November 2026. This file is an internal checklist, not website copy.
 
 ## Confirmed owner details
 
-Code Rustlers is an Indian sole proprietorship. App: Stillword. Public domain: code-rustlers.com. Support/privacy contact: ginni003@gmail.com. Audience: international, subject to applicable restrictions. AI: Google Gemini. Backend platform: Railway.
+Code Rustlers is an Indian sole proprietorship. App: Stillword. Public domain: code-rustlers.com. Support/privacy contact: contact@coderustlers.com. Audience: international, subject to applicable restrictions. AI: Google Gemini. Backend platform: Railway.
 
 ## Remaining details and implementation
 

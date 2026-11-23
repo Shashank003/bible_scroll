@@ -31,7 +31,7 @@ and the rest of the iOS repository are excluded.
 - `/apps/stillword/terms/`: terms of service.
 - `/apps/stillword/privacy/`: privacy policy.
 
-Brand: Code Rustlers, sole proprietorship, India. Product: Stillword. Domain: code-rustlers.com. Contact: ginni003@gmail.com. No store download buttons are included.
+Brand: Code Rustlers, sole proprietorship, India. Product: Stillword. Domain: code-rustlers.com. Contact: contact@coderustlers.com. No store download buttons are included.
 
 The documents have public-facing wording. Internal implementation and owner follow-ups are in LEGAL-REVIEW.md. Policy wording does not implement analytics consent, age restrictions, or production security. App legal URLs should be updated after this website is publicly deployed.
 
