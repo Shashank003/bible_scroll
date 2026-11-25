@@ -11,8 +11,6 @@
 		<key>NSAllowsLocalNetworking</key>
 		<true/>
 	</dict>
-	<key>NSLocalNetworkUsageDescription</key>
-	<string>Connect to your local development server for verse explanations.</string>
 	<key>PaywallPrivacyURL</key>
 	<string>$(PAYWALL_PRIVACY_URL)</string>
 	<key>PaywallTermsURL</key>
