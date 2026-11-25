@@ -4,4 +4,6 @@ REVENUECAT_OFFERING_ID =
 REVENUECAT_SECOND_OFFERING_ID =
 REVENUECAT_SECOND_PACKAGE_ID =
 REVENUECAT_PUBLIC_API_KEY =
+PAYWALL_TERMS_URL = https:/$()/coderustlers.com/apps/stillword/terms/
+PAYWALL_PRIVACY_URL = https:/$()/coderustlers.com/apps/stillword/privacy/
 #include? "RevenueCat.local.xcconfig"

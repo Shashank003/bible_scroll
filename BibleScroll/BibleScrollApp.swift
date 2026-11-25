@@ -14,6 +14,7 @@ private struct AppEntryView: View {
     @Environment(\.scenePhase) private var scenePhase
     @AppStorage("onboarding.reconnect.completed") private var completed = false
     @State private var launching = true
+    @AppStorage("app.theme") private var theme = "system"
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     var body: some View {
@@ -31,6 +32,7 @@ private struct AppEntryView: View {
             }
         }
         .environmentObject(subscriptions)
+        .preferredColorScheme(theme == "light" ? .light : theme == "dark" ? .dark : nil)
         .task { await subscriptions.load() }
         .onChange(of: scenePhase) { _, phase in
             if phase == .active { Task { await subscriptions.refreshAccess() } }

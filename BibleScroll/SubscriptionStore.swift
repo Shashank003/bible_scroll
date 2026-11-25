@@ -65,6 +65,17 @@ final class SubscriptionStore: NSObject, ObservableObject, PurchasesDelegate {
     @Published var message: String?
     @Published private(set) var managementURL: URL?
     @Published private(set) var expiration: Date?
+    @Published private(set) var currentProductID: String?
+    @Published private(set) var willRenew = false
+    @Published private(set) var isTrial = false
+    @Published private(set) var currentProduct: StoreProduct?
+
+    var currentPlanName: String {
+        guard hasPremium else { return "No active subscription" }
+        if let product = currentProduct { return product.localizedTitle }
+        let available = options + [secondAnnual].compactMap { $0 }
+        return available.first { $0.product.productIdentifier == currentProductID }?.title ?? "Stillword Premium"
+    }
 
     let configured: Bool
     let entitlementID: String
@@ -171,7 +182,13 @@ final class SubscriptionStore: NSObject, ObservableObject, PurchasesDelegate {
 
     func refreshAccess() async {
         guard configured else { return }
-        do { apply(try await Purchases.shared.customerInfo()) }
+        do {
+            apply(try await Purchases.shared.customerInfo())
+            if let id = currentProductID {
+                let products = await Purchases.shared.products([id])
+                if currentProductID == id { currentProduct = products.first }
+            }
+        }
         catch { /* Keep the last verified entitlement on a temporary connection failure. */ }
     }
 
@@ -215,6 +232,10 @@ final class SubscriptionStore: NSObject, ObservableObject, PurchasesDelegate {
         hasPremium = entitlement?.isActive == true
         expiration = entitlement?.expirationDate
         managementURL = info.managementURL
+        if currentProductID != entitlement?.productIdentifier { currentProduct = nil }
+        currentProductID = entitlement?.productIdentifier
+        willRenew = entitlement?.willRenew == true
+        isTrial = entitlement?.periodType == .trial
     }
 
     nonisolated func purchases(_ purchases: Purchases, receivedUpdated customerInfo: CustomerInfo) {
