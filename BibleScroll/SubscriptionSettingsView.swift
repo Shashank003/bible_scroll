@@ -2,7 +2,6 @@ import SwiftUI
 
 struct SubscriptionSettingsView: View {
     @EnvironmentObject private var subscriptions: SubscriptionStore
-    @State private var showPaywall = false
 
     var body: some View {
         List {
@@ -27,7 +26,6 @@ struct SubscriptionSettingsView: View {
             }
             .listRowBackground(AppStyle.surface)
             Section {
-                Button("View subscription options") { showPaywall = true }
                 Button {
                     Task { _ = await subscriptions.restore() }
                 } label: {
@@ -48,10 +46,7 @@ struct SubscriptionSettingsView: View {
         .navigationTitle("Subscription").navigationBarTitleDisplayMode(.inline)
         .tint(AppStyle.bronze)
         .task { await subscriptions.refreshAccess() }
-        .fullScreenCover(isPresented: $showPaywall) {
-            PaywallView(back: { showPaywall = false }, finish: { showPaywall = false })
-        }
-        .alert("Subscriptions", isPresented: Binding(get: { subscriptions.message != nil && !showPaywall },
+        .alert("Subscriptions", isPresented: Binding(get: { subscriptions.message != nil },
                                                      set: { if !$0 { subscriptions.message = nil } })) {
             Button("OK") { subscriptions.message = nil }
         } message: { Text(subscriptions.message ?? "") }
