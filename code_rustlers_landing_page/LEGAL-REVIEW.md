@@ -4,7 +4,7 @@ Updated 20 November 2026. This file is an internal checklist, not website copy.
 
 ## Confirmed owner details
 
-Code Rustlers is an Indian sole proprietorship. App: Stillword. Public domain: code-rustlers.com. Support/privacy contact: contact@coderustlers.com. Audience: international, subject to applicable restrictions. AI: Google Gemini. Backend platform: Railway.
+Code Rustlers is an Indian sole proprietorship. App: Stillword. Public domain: coderustlers.com. Support/privacy contact: contact@coderustlers.com. Audience: international, subject to applicable restrictions. AI: Google Gemini. Backend platform: Railway.
 
 ## Remaining details and implementation
 
@@ -16,7 +16,7 @@ Code Rustlers is an Indian sole proprietorship. App: Stillword. Public domain: c
 - Confirm amount, beneficiary, timing, and accounting for the paywall’s giving claim. No donation specifics or charitable status have been invented in the terms.
 - The website loads Google Fonts and discloses it. No optional website analytics cookies are installed.
 - The legal pages use public wording but have not received legal review for global distribution. Applicable Indian and international requirements may require additional disclosures or controls.
-- The app still uses existing snaprise.io legal URLs. Switch to the code-rustlers.com URLs only once these pages are publicly deployed and verified.
+- App settings and paywall configuration use the live legal pages at https://coderustlers.com/apps/stillword/terms/ and https://coderustlers.com/apps/stillword/privacy/.
 
 ## Sources
 

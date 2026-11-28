@@ -20,7 +20,7 @@ Set the landing-page service Root Directory to `/code_rustlers_landing_page`.
 Clear custom Build and Start commands, including any earlier `cd` / Python command.
 Railway detects the Dockerfile and runs nginx with the assigned PORT automatically.
 Commit and push these files, then redeploy. Generate a public domain under Networking
-and connect code-rustlers.com there. Keep the AI backend in a separate service.
+and connect coderustlers.com there. Keep the AI backend in a separate service.
 Only public website files are copied into the image; internal Markdown checklists
 and the rest of the iOS repository are excluded.
 
@@ -31,7 +31,7 @@ and the rest of the iOS repository are excluded.
 - `/apps/stillword/terms/`: terms of service.
 - `/apps/stillword/privacy/`: privacy policy.
 
-Brand: Code Rustlers, sole proprietorship, India. Product: Stillword. Domain: code-rustlers.com. Contact: contact@coderustlers.com. No store download buttons are included.
+Brand: Code Rustlers, sole proprietorship, India. Product: Stillword. Domain: coderustlers.com. Contact: contact@coderustlers.com. No store download buttons are included.
 
 The documents have public-facing wording. Internal implementation and owner follow-ups are in LEGAL-REVIEW.md. Policy wording does not implement analytics consent, age restrictions, or production security. App legal URLs should be updated after this website is publicly deployed.
 
